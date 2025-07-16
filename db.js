@@ -1,9 +1,9 @@
 const mysql = require('mysql2');
 
 const pool = mysql.createPool({
-    host: 'localhost',
+    host: 'crossover.proxy.rlwy.net',
     user: 'root',
-    password: 'root',
+    password: 'ZATPiJwCfwtPrfYxoLpLJwilfyGTaJpe',
     database: 'sistema_facturacion',
     connectionLimit: 10,
     waitForConnections: true,

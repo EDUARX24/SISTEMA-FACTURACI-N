@@ -1,9 +1,9 @@
 const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
-    host: 'localhost',
+    host: 'crossover.proxy.rlwy.net',
     user: 'root',
-    password: 'root',
+    password: 'ZATPiJwCfwtPrfYxoLpLJwilfyGTaJpe',
     database: 'sistema_facturacion'
 });
 
