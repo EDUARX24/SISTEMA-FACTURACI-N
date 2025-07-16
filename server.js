@@ -42,8 +42,15 @@ const configuracionRoutes = require('./routes/configuracion');
 const ventasRoutes = require('./routes/ventas');
 
 // Ruta principal
+// app.get('/', (req, res) => {
+//     console.log('Ruta raíz solicitada /');
+//     res.render('index');
+// });
+
+// Ruta principal (temporal para probar)
 app.get('/', (req, res) => {
-    res.render('index');
+    console.log('Ruta raíz solicitada /');
+    res.send('¡Servidor funcionando correctamente desde Seenode!');
 });
 
 // Usar las rutas
