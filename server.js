@@ -64,7 +64,7 @@ app.get('/productos', async (req, res) => {
         res.render('productos', { productos: productos || [] });
     } catch (error) {
         console.error('Error al obtener productos:', error);
-        res.status(500).render('error', { 
+        res.status(500).render('error', {
             error: {
                 message: 'Error al obtener productos',
                 stack: error.stack
@@ -93,10 +93,10 @@ async function startServer() {
         const connection = await db.getConnection();
         connection.release();
         console.log('Conexión exitosa a la base de datos');
-        
+
         // Iniciar el servidor solo si la conexión a la base de datos es exitosa
-        app.listen(PORT, () => {
-            console.log(`Servidor corriendo en http://localhost:${PORT}`);
+        app.listen(PORT, HOST, () => {
+            console.log(`Servidor corriendo en http://${HOST}:${PORT}`);
         });
     } catch (err) {
         console.error('Error al conectar a la base de datos:', err);
