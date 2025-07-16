@@ -5,8 +5,7 @@ const fs = require('fs');
 const app = express();
 const db = require('./db');
 
-const PORT = process.env.PORT || 3000;
-const HOST = process.env.HOST || '0.0.0.0';
+
 
 // Crear directorios necesarios
 const createRequiredDirectories = () => {
@@ -85,7 +84,8 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Error interno del servidor' });
 });
 
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || '0.0.0.0';
 
 // Verificar la conexión a la base de datos antes de iniciar el servidor
 async function startServer() {
