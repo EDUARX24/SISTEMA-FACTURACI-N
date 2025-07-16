@@ -20,7 +20,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "build": "pkg . --no-bytecode --public"
+    "build": "npx pkg . --no-bytecode --public"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
@@ -31,6 +31,7 @@
     "mysql2": "^3.2.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "pkg": "^5.8.1"
   }
 }
