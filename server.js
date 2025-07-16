@@ -86,8 +86,13 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Error interno del servidor' });
 });
 
-const PORT = process.env.PORT || 80;
-// const HOST = process.env.HOST || '0.0.0.0';
+const PORT = process.env.PORT;
+
+if (!PORT) {
+  console.error("🚨 ERROR: process.env.PORT no está definido.");
+  process.exit(1);
+}
+
 
 // Verificar la conexión a la base de datos antes de iniciar el servidor
 async function startServer() {
