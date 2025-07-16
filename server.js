@@ -42,16 +42,11 @@ const configuracionRoutes = require('./routes/configuracion');
 const ventasRoutes = require('./routes/ventas');
 
 // Ruta principal
-// app.get('/', (req, res) => {
-//     console.log('Ruta raíz solicitada /');
-//     res.render('index');
-// });
-
-// Ruta principal (temporal para probar)
 app.get('/', (req, res) => {
     console.log('Ruta raíz solicitada /');
-    res.send('¡Servidor funcionando correctamente desde Seenode!');
+    res.render('index');
 });
+
 
 // Usar las rutas
 app.use('/productos', productosRoutes);
@@ -91,8 +86,8 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Error interno del servidor' });
 });
 
-const PORT = process.env.PORT || 3000;
-const HOST = process.env.HOST || '0.0.0.0';
+const PORT = process.env.PORT || 80;
+// const HOST = process.env.HOST || '0.0.0.0';
 
 // Verificar la conexión a la base de datos antes de iniciar el servidor
 async function startServer() {
@@ -102,8 +97,8 @@ async function startServer() {
         console.log('Conexión exitosa a la base de datos');
 
         // Iniciar el servidor solo si la conexión a la base de datos es exitosa
-        app.listen(PORT, HOST, () => {
-            console.log(`Servidor corriendo en http://${HOST}:${PORT}`);
+        app.listen(PORT, () => {
+            console.log(`Servidor escuchando en el puerto ${PORT}`);
         });
     } catch (err) {
         console.error('Error al conectar a la base de datos:', err);
