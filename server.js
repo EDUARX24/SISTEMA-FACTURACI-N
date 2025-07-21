@@ -101,6 +101,7 @@ async function startServer() {
         connection.release();
         console.log('Conexión exitosa a la base de datos');
 
+        console.log(`🟢 Escuchando en http://localhost:${PORT}`);
         // Iniciar el servidor solo si la conexión a la base de datos es exitosa
         app.listen(PORT, () => {
             console.log(`Servidor escuchando en el puerto ${PORT}`);
